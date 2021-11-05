@@ -9,6 +9,10 @@ import android.support.v4.content.ContextCompat
 import android.util.Log
 import android.view.View
 import android.widget.*
+import com.example.quizzapp2.MoreQuestions.CarQuestions
+import com.example.quizzapp2.MoreQuestions.HistoryQuestions
+import com.example.quizzapp2.MoreQuestions.MoviesQuestions
+import com.example.quizzapp2.MoreQuestions.newCategoryQuestions
 
 class QuizQuestionActivity : AppCompatActivity(),View.OnClickListener{
     private var mCurrentPorsition:Int=1
@@ -17,6 +21,7 @@ class QuizQuestionActivity : AppCompatActivity(),View.OnClickListener{
 
     private var mUserName:String?=null
     private var mCorrectAnswers:Int=0
+    private var numberQSet:Int?=0
 
     private var progresBar:ProgressBar?=null
     private var tvProgressTextV:TextView?=null
@@ -27,12 +32,16 @@ class QuizQuestionActivity : AppCompatActivity(),View.OnClickListener{
     private var optionThree:TextView?=null
     private var optionFour:TextView?=null
     private var btnSubmit:Button?=null
-
+    fun init(){
+        println("$numberQSet")
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_question)
         //String from Main Activity
         mUserName=intent.getStringExtra(Constants.USER_NAME)
+        numberQSet=intent.getIntExtra("Question set Number",0)
+        init()
 
         progresBar=findViewById(R.id.tv_progressbar)
         tvProgressTextV=findViewById(R.id.tv_progressTextView)
@@ -43,8 +52,7 @@ class QuizQuestionActivity : AppCompatActivity(),View.OnClickListener{
         optionThree=findViewById(R.id.tv_optionThree)
         optionFour=findViewById(R.id.tv_optionFour)
         btnSubmit=findViewById(R.id.btn_submit)
-
-        mQuestonsList = Constants.getQuestions()
+        getQuestions()
         setQuestion()
 
         optionOne?.setOnClickListener(this)
@@ -52,6 +60,19 @@ class QuizQuestionActivity : AppCompatActivity(),View.OnClickListener{
         optionThree?.setOnClickListener(this)
         optionFour?.setOnClickListener(this)
         btnSubmit?.setOnClickListener(this)
+    }
+    private fun getQuestions(){
+        if(numberQSet==1) {
+            mQuestonsList = Constants.getQuestions()
+        }else if (numberQSet==2){
+            mQuestonsList=newCategoryQuestions.getQuestions()
+        }else if(numberQSet==3){
+            mQuestonsList=CarQuestions.getQuestions()
+        }else if (numberQSet==4){
+            mQuestonsList=MoviesQuestions.getQuestions()
+        }else if(numberQSet==5){
+            mQuestonsList=HistoryQuestions.getQuestions()
+        }
     }
 
     private fun setQuestion() {

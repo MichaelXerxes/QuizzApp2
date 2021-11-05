@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@color/teal_200">
+
+    <Button
+        android:id="@+id/button_flags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Flag Questions"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_buttons_color"
+        android:padding="5dp"
+        android:background="@drawable/button_menu_look"
+        />
+
+    <Button
+        android:id="@+id/button_maths"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mathematic Questions"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_buttons_color"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/button_menu_look"/>
+
+    <Button
+        android:id="@+id/button_cars"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cars Questions"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_buttons_color"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/button_menu_look"/>
+
+    <Button
+        android:id="@+id/button_movies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Movies Questions"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_buttons_color"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/button_menu_look"/>
+
+    <Button
+        android:id="@+id/button_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="History Questions"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="@color/text_buttons_color"
+        android:padding="5dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/button_menu_look"/>
+</LinearLayout>
