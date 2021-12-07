@@ -3,12 +3,13 @@ package com.example.quizzapp2
 import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle
-import android.support.v4.content.ContextCompat
+
 import android.util.Log
 import android.view.View
 import android.widget.*
+import androidx.core.content.ContextCompat
 import com.example.quizzapp2.MoreQuestions.CarQuestions
 import com.example.quizzapp2.MoreQuestions.HistoryQuestions
 import com.example.quizzapp2.MoreQuestions.MoviesQuestions
@@ -114,7 +115,7 @@ class QuizQuestionActivity : AppCompatActivity(),View.OnClickListener{
         for (option in options){
             option.setTextColor(Color.parseColor("#7A8089"))
             option.typeface= Typeface.DEFAULT
-            option.background=ContextCompat.getDrawable(
+            option.background= ContextCompat.getDrawable(
                 this,
                 R.drawable.default_option_border
             )
